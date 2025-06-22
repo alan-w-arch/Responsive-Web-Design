@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Programming Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>R Programming</header>
+        <a class="nav-link" href="#Introduction_to_R">Introduction to R</a>
+        <a class="nav-link" href="#Basic_Syntax">Basic Syntax</a>
+        <a class="nav-link" href="#Data_Types">Data Types</a>
+        <a class="nav-link" href="#Control_Structures">Control Structures</a>
+        <a class="nav-link" href="#Functions">Functions</a>
+        <a class="nav-link" href="#Data_Frames">Data Frames</a>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction_to_R">
+            <header>Introduction to R</header>
+            <p>R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. It is widely used among statisticians and data miners for developing statistical software and data analysis.</p>
+            <p>Key features of R include:</p>
+            <ul>
+                <li>Effective data handling and storage facility</li>
+                <li>A suite of operators for calculations on arrays, in particular matrices</li>
+                <li>A large, coherent, integrated collection of intermediate tools for data analysis</li>
+                <li>Graphical facilities for data analysis and display</li>
+                <li>A well-developed, simple and effective programming language</li>
+            </ul>
+            <p>R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and is now developed by the R Development Core Team.</p>
+            <code>print("Hello, World!")</code>
+        </section>
+
+        <section class="main-section" id="Basic_Syntax">
+            <header>Basic Syntax</header>
+            <p>R is an interpreted language which means that commands are executed directly without needing to compile a program.</p>
+            <p>Basic R syntax includes:</p>
+            <ul>
+                <li>Assignment operators: <- or =</li>
+                <li>Comments start with #</li>
+                <li>Function calls use parentheses</li>
+            </ul>
+            <p>Here are some basic examples:</p>
+            <code>x <- 5  # Assignment
+y = 10 # Alternative assignment
+x + y  # Addition</code>
+            <p>R is case-sensitive, so 'Variable' and 'variable' would be two different objects.</p>
+            <code># This is a comment
+my_var <- 42
+print(my_var)</code>
+        </section>
+
+        <section class="main-section" id="Data_Types">
+            <header>Data Types</header>
+            <p>R has several basic data types:</p>
+            <ul>
+                <li>Numeric: decimal numbers (default type for numbers)</li>
+                <li>Integer: whole numbers</li>
+                <li>Logical: TRUE or FALSE</li>
+                <li>Character: strings</li>
+                <li>Complex: complex numbers</li>
+            </ul>
+            <p>You can check the type of a variable using the class() function:</p>
+            <code>x <- 10.5
+class(x)  # "numeric"
+
+y <- 10L
+class(y)  # "integer"
+
+z <- TRUE
+class(z)  # "logical"</code>
+            <p>R also has special values:</p>
+            <code>NA    # Not Available/Not Applicable
+NULL  # Null object
+Inf   # Infinity
+NaN   # Not a Number</code>
+        </section>
+
+        <section class="main-section" id="Control_Structures">
+            <header>Control Structures</header>
+            <p>Control structures allow you to control the flow of execution of the program. R provides standard control structures similar to other languages:</p>
+            <p>Conditional statements:</p>
+            <code># if statement
+x <- 5
+if (x > 0) {
+    print("Positive number")
+} else if (x < 0) {
+    print("Negative number")
+} else {
+    print("Zero")
+}</code>
+            <p>Loops:</p>
+            <code># for loop
+for (i in 1:5) {
+    print(i)
+}
+
+# while loop
+count <- 1
+while (count <= 5) {
+    print(count)
+    count <- count + 1
+}</code>
+            <p>R also has vectorized operations that often eliminate the need for explicit loops:</p>
+            <code>x <- 1:5
+y <- x * 2  # Vectorized operation</code>
+        </section>
+
+        <section class="main-section" id="Functions">
+            <header>Functions</header>
+            <p>Functions are fundamental building blocks in R. You can create your own functions using the function() function:</p>
+            <code># Function definition
+square <- function(x) {
+    return(x * x)
+}
+
+# Function call
+square(5)  # Returns 25</code>
+            <p>Functions can have default arguments:</p>
+            <code>power <- function(x, exponent = 2) {
+    return(x ^ exponent)
+}
+
+power(3)     # Returns 9 (3^2)
+power(3, 3)  # Returns 27 (3^3)</code>
+            <p>R has many built-in functions for statistical operations:</p>
+            <code>mean(c(1, 2, 3, 4, 5))  # Returns 3
+sd(c(1, 2, 3, 4, 5))    # Standard deviation
+summary(c(1, 2, 3, 4, 5)) # Statistical summary</code>
+            <p>Anonymous functions (lambdas) are also supported:</p>
+            <code>sapply(1:5, function(x) x^2)  # Returns c(1, 4, 9, 16, 25)</code>
+        </section>
+
+        <section class="main-section" id="Data_Frames">
+            <header>Data Frames</header>
+            <p>Data frames are the most important data structure in R for data analysis. They are similar to tables in a database or Excel spreadsheets.</p>
+            <p>Creating a data frame:</p>
+            <code># Create a data frame
+df <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    score = c(88.5, 92.0, 85.5)
+)
+
+# View the data frame
+print(df)</code>
+            <p>Accessing data frame elements:</p>
+            <code>df$name       # Access column
+df[1, ]      # First row
+df[, 2]      # Second column
+df[2, "age"] # Specific cell</code>
+            <p>Common operations on data frames:</p>
+            <code>head(df)      # View first few rows
+summary(df)  # Summary statistics
+dim(df)      # Dimensions (rows, columns)
+names(df)    # Column names</code>
+            <p>R's dplyr package provides a powerful grammar for data manipulation:</p>
+            <code>library(dplyr)
+df %>% filter(age > 25) %>% arrange(desc(score))</code>
+        </section>
+    </main>
+</body>
+</html>

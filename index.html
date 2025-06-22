@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .project-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .project-content {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 60%;
+        }
+
+        .preview, .code {
+            flex: 1;
+            min-width: 300px;
+            padding: 1.5rem;
+        }
+
+        .preview {
+            border-right: 1px solid #eee;
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .code-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .code-tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .code-tab.active {
+            border-bottom-color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .code-content {
+            position:  relative;
+
+        }
+
+        pre {
+            margin: 0;
+            border-radius: 5px;
+            height: 750px;
+            overflow: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .preview, .code {
+                flex: 100%;
+            }
+            
+            .preview {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Web Design Projects</h1>
+        <p>A collection of projects demonstrating responsive web design principles and techniques</p>
+    </header>
+
+    <div class="container">
+        <!-- Survey Form Project -->
+        <div class="project-card">
+    <div class="project-header">
+        <h2>Survey Form</h2>
+        <a href="SurveyForm/index.html" class="btn">View Full Project</a>
+    </div>
+    <div class="project-content">
+        <div class="preview">
+            <h3>Preview</h3>
+            <iframe src="SurveyForm/index.html" class="preview-iframe"></iframe>
+        </div>
+        <div class="code">
+            <h3>Code</h3>
+            <div class="code-tabs">
+                <div class="code-tab active" onclick="showCode('survey-html')">HTML</div>
+                <div class="code-tab" onclick="showCode('survey-css')">CSS</div>
+            </div>
+            <div class="code-content">
+                <pre id="survey-html" class="code-block"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Customer Satisfaction Survey&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1 id="title"&gt;Customer Satisfaction Survey&lt;/h1&gt;
+        &lt;p id="description"&gt;Thank you for taking the time to help us improve our services&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;form id="survey-form"&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label id="name-label" for="name"&gt;Full Name&lt;/label&gt;
+            &lt;input type="text" id="name" name="name" placeholder="Enter your name" required&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;label id="email-label" for="email"&gt;Email Address&lt;/label&gt;
+            &lt;input type="email" id="email" name="email" placeholder="Enter your email" required&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;label id="number-label" for="number"&gt;Age &lt;span class="clue"&gt;(optional)&lt;/span&gt;&lt;/label&gt;
+            &lt;input type="number" id="number" name="age" min="13" max="120" placeholder="Age"&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;label for="dropdown"&gt;Which option best describes your current role?&lt;/label&gt;
+            &lt;select id="dropdown" name="role" required&gt;
+                &lt;option disabled selected value&gt;Select current role&lt;/option&gt;
+                &lt;option value="student"&gt;Student&lt;/option&gt;
+                &lt;option value="full-time-job"&gt;Full Time Job&lt;/option&gt;
+                &lt;option value="part-time-job"&gt;Part Time Job&lt;/option&gt;
+                &lt;option value="self-employed"&gt;Self Employed&lt;/option&gt;
+                &lt;option value="prefer-not-to-say"&gt;Prefer not to say&lt;/option&gt;
+                &lt;option value="other"&gt;Other&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;p&gt;Would you recommend our service to a friend?&lt;/p&gt;
+            &lt;label&gt;
+                &lt;input name="recommend" value="definitely" type="radio" checked&gt;
+                Definitely
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input name="recommend" value="maybe" type="radio"&gt;
+                Maybe
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input name="recommend" value="not-sure" type="radio"&gt;
+                Not sure
+            &lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;p&gt;What would you like to see improved? &lt;span class="clue"&gt;(Check all that apply)&lt;/span&gt;&lt;/p&gt;
+            &lt;label&gt;
+                &lt;input name="improvements" value="front-end-projects" type="checkbox"&gt;
+                Front-end Projects
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input name="improvements" value="back-end-projects" type="checkbox"&gt;
+                Back-end Projects
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input name="improvements" value="data-visualization" type="checkbox"&gt;
+                Data Visualization
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input name="improvements" value="forum" type="checkbox"&gt;
+                Forum
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input name="improvements" value="additional-courses" type="checkbox"&gt;
+                Additional Courses
+            &lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;p&gt;Any comments or suggestions?&lt;/p&gt;
+            &lt;textarea id="comments" name="comment" placeholder="Enter your comment here..."&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+            &lt;button type="submit" id="submit"&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <pre id="survey-css" class="code-block" style="display: none;"><code class="css">body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4a6fa5;
+    color: white;
+    border-radius: 5px;
+}
+
+#title {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+#description {
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+#survey-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.clue {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: normal;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3a5a8f;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    #survey-form {
+        padding: 15px;
+    }
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Tribute Page Project -->
+       <div class="project-card">
+    <div class="project-header">
+        <h2>Tribute Page</h2>
+        <a href="TributePage/index.html" class="btn">View Full Project</a>
+    </div>
+    <div class="project-content">
+        <div class="preview">
+            <h3>Preview</h3>
+            <iframe src="TributePage/index.html" class="preview-iframe"></iframe>
+        </div>
+        <div class="code">
+            <h3>Code</h3>
+            <div class="code-tabs">
+                <div class="code-tab active" onclick="showCode('tribute-html')">HTML</div>
+                <div class="code-tab" onclick="showCode('tribute-css')">CSS</div>
+            </div>
+            <div class="code-content">
+                <pre id="tribute-html" class="code-block"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Tribute to Mahatma Gandhi&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;main id="main"&gt;
+        &lt;h1 id="title"&gt;Mahatma Gandhi&lt;/h1&gt;
+        &lt;p class="subtitle"&gt;The Father of the Indian Nation&lt;/p&gt;
+        
+        &lt;figure id="img-div"&gt;
+            &lt;img id="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/800px-Mahatma-Gandhi%2C_studio%2C_1931.jpg" alt="Mahatma Gandhi spinning yarn"&gt;
+            &lt;figcaption id="img-caption"&gt;Mahatma Gandhi spinning yarn, demonstrating his commitment to self-reliance and the Swadeshi movement&lt;/figcaption&gt;
+        &lt;/figure&gt;
+        
+        &lt;section id="tribute-info"&gt;
+            &lt;h2&gt;Key Moments in Gandhi's Life&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;1869&lt;/strong&gt; - Born in Porbandar, Gujarat, India&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1888&lt;/strong&gt; - Traveled to London to study law&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1893&lt;/strong&gt; - Went to South Africa to practice law, where he developed his philosophy of nonviolent resistance&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1915&lt;/strong&gt; - Returned to India and joined the Indian National Congress&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1919&lt;/strong&gt; - Launched the Non-Cooperation Movement against British rule&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1930&lt;/strong&gt; - Led the famous Salt March to protest the British salt tax&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1942&lt;/strong&gt; - Launched the Quit India Movement demanding immediate independence&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1947&lt;/strong&gt; - India gained independence from British rule&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;1948&lt;/strong&gt; - Assassinated by Nathuram Godse in New Delhi&lt;/li&gt;
+            &lt;/ul&gt;
+            
+            &lt;blockquote&gt;
+                &lt;p&gt;"Be the change that you wish to see in the world."&lt;/p&gt;
+                &lt;cite&gt;— Mahatma Gandhi&lt;/cite&gt;
+            &lt;/blockquote&gt;
+            
+            &lt;h3&gt;Learn more about this incredible leader on his 
+                &lt;a id="tribute-link" href="https://en.wikipedia.org/wiki/Mahatma_Gandhi" target="_blank"&gt;Wikipedia entry&lt;/a&gt;.
+            &lt;/h3&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <pre id="tribute-css" class="code-block" style="display: none;"><code class="css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+#main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+#img-div {
+    background-color: white;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+#img-caption {
+    margin-top: 15px;
+    color: #555;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+#tribute-info {
+    margin: 30px 0;
+}
+
+#tribute-info h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#tribute-info ul {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+#tribute-info li {
+    margin-bottom: 10px;
+}
+
+blockquote {
+    font-style: italic;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-left: 5px solid #3498db;
+    border-radius: 0 5px 5px 0;
+}
+
+blockquote p {
+    margin-bottom: 10px;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    color: #7f8c8d;
+}
+
+#tribute-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#tribute-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    #title {
+        font-size: 2rem;
+    }
+    
+    #tribute-info ul {
+        padding-left: 20px;
+    }
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Technical Documentation Page -->
+        <div class="project-card">
+    <div class="project-header">
+        <h2>Technical Documentation</h2>
+        <a href="TechnicalDocumentationPage/index.html" class="btn">View Full Project</a>
+    </div>
+    <div class="project-content">
+        <div class="preview">
+            <h3>Preview</h3>
+            <iframe src="TechnicalDocumentationPage/index.html" class="preview-iframe"></iframe>
+        </div>
+        <div class="code">
+            <h3>Code</h3>
+            <div class="code-tabs">
+                <div class="code-tab active" onclick="showCode('docs-html')">HTML</div>
+                <div class="code-tab" onclick="showCode('docs-css')">CSS</div>
+            </div>
+            <div class="code-content">
+                <pre id="docs-html" class="code-block"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;R Programming Documentation&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav id="navbar"&gt;
+        &lt;header&gt;R Programming&lt;/header&gt;
+        &lt;a class="nav-link" href="#Introduction_to_R"&gt;Introduction to R&lt;/a&gt;
+        &lt;a class="nav-link" href="#Basic_Syntax"&gt;Basic Syntax&lt;/a&gt;
+        &lt;a class="nav-link" href="#Data_Types"&gt;Data Types&lt;/a&gt;
+        &lt;a class="nav-link" href="#Control_Structures"&gt;Control Structures&lt;/a&gt;
+        &lt;a class="nav-link" href="#Functions"&gt;Functions&lt;/a&gt;
+        &lt;a class="nav-link" href="#Data_Frames"&gt;Data Frames&lt;/a&gt;
+    &lt;/nav&gt;
+
+    &lt;main id="main-doc"&gt;
+        &lt;section class="main-section" id="Introduction_to_R"&gt;
+            &lt;header&gt;Introduction to R&lt;/header&gt;
+            &lt;p&gt;R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. It is widely used among statisticians and data miners for developing statistical software and data analysis.&lt;/p&gt;
+            &lt;p&gt;Key features of R include:&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Effective data handling and storage facility&lt;/li&gt;
+                &lt;li&gt;A suite of operators for calculations on arrays, in particular matrices&lt;/li&gt;
+                &lt;li&gt;A large, coherent, integrated collection of intermediate tools for data analysis&lt;/li&gt;
+                &lt;li&gt;Graphical facilities for data analysis and display&lt;/li&gt;
+                &lt;li&gt;A well-developed, simple and effective programming language&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and is now developed by the R Development Core Team.&lt;/p&gt;
+            &lt;code&gt;print("Hello, World!")&lt;/code&gt;
+        &lt;/section&gt;
+
+        &lt;section class="main-section" id="Basic_Syntax"&gt;
+            &lt;header&gt;Basic Syntax&lt;/header&gt;
+            &lt;p&gt;R is an interpreted language which means that commands are executed directly without needing to compile a program.&lt;/p&gt;
+            &lt;p&gt;Basic R syntax includes:&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Assignment operators: &lt;- or =&lt;/li&gt;
+                &lt;li&gt;Comments start with #&lt;/li&gt;
+                &lt;li&gt;Function calls use parentheses&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;Here are some basic examples:&lt;/p&gt;
+            &lt;code&gt;x &lt;- 5  # Assignment
+y = 10 # Alternative assignment
+x + y  # Addition&lt;/code&gt;
+            &lt;p&gt;R is case-sensitive, so 'Variable' and 'variable' would be two different objects.&lt;/p&gt;
+            &lt;code&gt;# This is a comment
+my_var &lt;- 42
+print(my_var)&lt;/code&gt;
+        &lt;/section&gt;
+
+        &lt;section class="main-section" id="Data_Types"&gt;
+            &lt;header&gt;Data Types&lt;/header&gt;
+            &lt;p&gt;R has several basic data types:&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Numeric: decimal numbers (default type for numbers)&lt;/li&gt;
+                &lt;li&gt;Integer: whole numbers&lt;/li&gt;
+                &lt;li&gt;Logical: TRUE or FALSE&lt;/li&gt;
+                &lt;li&gt;Character: strings&lt;/li&gt;
+                &lt;li&gt;Complex: complex numbers&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;You can check the type of a variable using the class() function:&lt;/p&gt;
+            &lt;code&gt;x &lt;- 10.5
+class(x)  # "numeric"
+
+y &lt;- 10L
+class(y)  # "integer"
+
+z &lt;- TRUE
+class(z)  # "logical"&lt;/code&gt;
+            &lt;p&gt;R also has special values:&lt;/p&gt;
+            &lt;code&gt;NA    # Not Available/Not Applicable
+NULL  # Null object
+Inf   # Infinity
+NaN   # Not a Number&lt;/code&gt;
+        &lt;/section&gt;
+
+        &lt;section class="main-section" id="Control_Structures"&gt;
+            &lt;header&gt;Control Structures&lt;/header&gt;
+            &lt;p&gt;Control structures allow you to control the flow of execution of the program. R provides standard control structures similar to other languages:&lt;/p&gt;
+            &lt;p&gt;Conditional statements:&lt;/p&gt;
+            &lt;code&gt;# if statement
+x &lt;- 5
+if (x &gt; 0) {
+    print("Positive number")
+} else if (x &lt; 0) {
+    print("Negative number")
+} else {
+    print("Zero")
+}&lt;/code&gt;
+            &lt;p&gt;Loops:&lt;/p&gt;
+            &lt;code&gt;# for loop
+for (i in 1:5) {
+    print(i)
+}
+
+# while loop
+count &lt;- 1
+while (count &lt;= 5) {
+    print(count)
+    count &lt;- count + 1
+}&lt;/code&gt;
+            &lt;p&gt;R also has vectorized operations that often eliminate the need for explicit loops:&lt;/p&gt;
+            &lt;code&gt;x &lt;- 1:5
+y &lt;- x * 2  # Vectorized operation&lt;/code&gt;
+        &lt;/section&gt;
+
+        &lt;section class="main-section" id="Functions"&gt;
+            &lt;header&gt;Functions&lt;/header&gt;
+            &lt;p&gt;Functions are fundamental building blocks in R. You can create your own functions using the function() function:&lt;/p&gt;
+            &lt;code&gt;# Function definition
+square &lt;- function(x) {
+    return(x * x)
+}
+
+# Function call
+square(5)  # Returns 25&lt;/code&gt;
+            &lt;p&gt;Functions can have default arguments:&lt;/p&gt;
+            &lt;code&gt;power &lt;- function(x, exponent = 2) {
+    return(x ^ exponent)
+}
+
+power(3)     # Returns 9 (3^2)
+power(3, 3)  # Returns 27 (3^3)&lt;/code&gt;
+            &lt;p&gt;R has many built-in functions for statistical operations:&lt;/p&gt;
+            &lt;code&gt;mean(c(1, 2, 3, 4, 5))  # Returns 3
+sd(c(1, 2, 3, 4, 5))    # Standard deviation
+summary(c(1, 2, 3, 4, 5)) # Statistical summary&lt;/code&gt;
+            &lt;p&gt;Anonymous functions (lambdas) are also supported:&lt;/p&gt;
+            &lt;code&gt;sapply(1:5, function(x) x^2)  # Returns c(1, 4, 9, 16, 25)&lt;/code&gt;
+        &lt;/section&gt;
+
+        &lt;section class="main-section" id="Data_Frames"&gt;
+            &lt;header&gt;Data Frames&lt;/header&gt;
+            &lt;p&gt;Data frames are the most important data structure in R for data analysis. They are similar to tables in a database or Excel spreadsheets.&lt;/p&gt;
+            &lt;p&gt;Creating a data frame:&lt;/p&gt;
+            &lt;code&gt;# Create a data frame
+df &lt;- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    score = c(88.5, 92.0, 85.5)
+)
+
+# View the data frame
+print(df)&lt;/code&gt;
+            &lt;p&gt;Accessing data frame elements:&lt;/p&gt;
+            &lt;code&gt;df$name       # Access column
+df[1, ]      # First row
+df[, 2]      # Second column
+df[2, "age"] # Specific cell&lt;/code&gt;
+            &lt;p&gt;Common operations on data frames:&lt;/p&gt;
+            &lt;code&gt;head(df)      # View first few rows
+summary(df)  # Summary statistics
+dim(df)      # Dimensions (rows, columns)
+names(df)    # Column names&lt;/code&gt;
+            &lt;p&gt;R's dplyr package provides a powerful grammar for data manipulation:&lt;/p&gt;
+            &lt;code&gt;library(dplyr)
+df %&gt;% filter(age &gt; 25) %&gt;% arrange(desc(score))&lt;/code&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <pre id="docs-css" class="code-block" style="display: none;"><code class="css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+}
+
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-color: rgba(0, 22, 22, 0.4);
+    background-color: #f8f9fa;
+    overflow-y: auto;
+}
+
+#navbar header {
+    color: #2c3e50;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#navbar .nav-link {
+    display: block;
+    padding: 10px 30px;
+    color: #4d4e53;
+    text-decoration: none;
+    cursor: pointer;
+    border-top: 1px solid #ddd;
+}
+
+#navbar .nav-link:hover {
+    background-color: #e9ecef;
+    color: #2c3e50;
+}
+
+#main-doc {
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    margin-bottom: 110px;
+}
+
+.main-section {
+    margin-bottom: 40px;
+}
+
+.main-section header {
+    font-size: 1.5em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.main-section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.main-section ul {
+    margin-bottom: 15px;
+    padding-left: 40px;
+}
+
+.main-section li {
+    margin-bottom: 10px;
+}
+
+code {
+    display: block;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+
+@media (max-width: 815px) {
+    #navbar {
+        position: absolute;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-height: 275px;
+        border: none;
+        z-index: 1;
+        border-bottom: 2px solid;
+    }
+
+    #main-doc {
+        position: relative;
+        margin-left: 0;
+        margin-top: 270px;
+    }
+}
+
+@media (max-width: 400px) {
+    #main-doc {
+        margin-left: -10px;
+    }
+
+    code {
+        margin-left: -20px;
+        width: 100%;
+        padding: 15px;
+        padding-left: 10px;
+        padding-right: 45px;
+        min-width: 233px;
+    }
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Product Landing Page -->
+        <div class="project-card">
+    <div class="project-header">
+        <h2>Product Landing Page</h2>
+        <a href="ProductLandingPage/index.html" class="btn">View Full Project</a>
+    </div>
+    <div class="project-content">
+        <div class="preview">
+            <h3>Preview</h3>
+            <iframe src="ProductLandingPage/index.html" class="preview-iframe"></iframe>
+        </div>
+        <div class="code">
+            <h3>Code</h3>
+            <div class="code-tabs">
+                <div class="code-tab active" onclick="showCode('landing-html')">HTML</div>
+                <div class="code-tab" onclick="showCode('landing-css')">CSS</div>
+            </div>
+            <div class="code-content">
+                <pre id="landing-html" class="code-block"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;DOOGEE Rugged Smartphones | Premium Durability&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header id="header"&gt;
+        &lt;div class="logo-container"&gt;
+            &lt;img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Doogee_LOGO.png" alt="DOOGEE Logo"&gt;
+        &lt;/div&gt;
+        
+        &lt;nav id="nav-bar"&gt;
+            &lt;a class="nav-link" href="#features"&gt;Features&lt;/a&gt;
+            &lt;a class="nav-link" href="#video"&gt;How It Works&lt;/a&gt;
+            &lt;a class="nav-link" href="#pricing"&gt;Pricing&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class="hero"&gt;
+            &lt;h1&gt;Premium Rugged Smartphones&lt;/h1&gt;
+            &lt;p&gt;Built to withstand life's toughest challenges&lt;/p&gt;
+            &lt;form id="form" action="https://www.freecodecamp.com/email-submit"&gt;
+                &lt;input type="email" id="email" name="email" placeholder="Enter your email address" required&gt;
+                &lt;input type="submit" id="submit" value="GET STARTED"&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+
+        &lt;section id="features"&gt;
+            &lt;div class="feature"&gt;
+                &lt;div class="icon"&gt;&lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class="desc"&gt;
+                    &lt;h2&gt;Military-Grade Protection&lt;/h2&gt;
+                    &lt;p&gt;Our smartphones meet MIL-STD-810G standards for shock, vibration, and extreme temperature resistance.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="feature"&gt;
+                &lt;div class="icon"&gt;&lt;i class="fas fa-tint"&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class="desc"&gt;
+                    &lt;h2&gt;Waterproof Design&lt;/h2&gt;
+                    &lt;p&gt;IP68 &amp; IP69K certified protection against water, dust, and high-pressure water jets.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="feature"&gt;
+                &lt;div class="icon"&gt;&lt;i class="fas fa-battery-full"&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class="desc"&gt;
+                    &lt;h2&gt;Massive Battery Life&lt;/h2&gt;
+                    &lt;p&gt;Up to 10000mAh battery capacity that lasts for days on a single charge.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class="video-container"&gt;
+            &lt;iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/ibxa4XzOSW8?si=2iX51DDiwJXRXlhJ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+        &lt;/section&gt;
+
+        &lt;section id="pricing"&gt;
+            &lt;div class="product"&gt;
+                &lt;div class="product-name"&gt;DOOGEE S96 Pro&lt;/div&gt;
+                &lt;h3&gt;$299&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;6.22" FHD+ Display&lt;/li&gt;
+                    &lt;li&gt;Helio G90 Processor&lt;/li&gt;
+                    &lt;li&gt;6350mAh Battery&lt;/li&gt;
+                    &lt;li&gt;IP68/IP69K Waterproof&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;button class="btn"&gt;SELECT&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="product"&gt;
+                &lt;div class="product-name"&gt;DOOGEE S88 Pro&lt;/div&gt;
+                &lt;h3&gt;$349&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;6.3" FHD+ Display&lt;/li&gt;
+                    &lt;li&gt;Helio P70 Processor&lt;/li&gt;
+                    &lt;li&gt;10000mAh Battery&lt;/li&gt;
+                    &lt;li&gt;Wireless Charging&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;button class="btn"&gt;SELECT&lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="product"&gt;
+                &lt;div class="product-name"&gt;DOOGEE V20&lt;/div&gt;
+                &lt;h3&gt;$399&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;6.43" AMOLED Display&lt;/li&gt;
+                    &lt;li&gt;Dimensity 700 5G&lt;/li&gt;
+                    &lt;li&gt;6000mAh Battery&lt;/li&gt;
+                    &lt;li&gt;108MP Triple Camera&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;button class="btn"&gt;SELECT&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;&amp;copy; 2023 DOOGEE. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <pre id="landing-css" class="code-block" style="display: none;"><code class="css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 75px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.logo-container {
+    width: 60vw;
+}
+
+#header-img {
+    width: 180px;
+    height: auto;
+}
+
+#nav-bar {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff6b00;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    margin-top: 75px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://st.depositphotos.com/1388768/51377/i/450/depositphotos_513776698-stock-photo-abstract-futuristic-technology-polygonal-shapes.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+#email {
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#submit {
+    padding: 12px 20px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: #e05d00;
+}
+
+#features {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.icon {
+    color: #ff6b00;
+    font-size: 2.5rem;
+    margin-right: 30px;
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.desc h2 {
+    margin-bottom: 10px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+}
+
+#video {
+    max-width: 560px;
+    width: 100%;
+    height: 315px;
+}
+
+#pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 20px;
+}
+
+.product {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff6b00;
+}
+
+.product h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.product ul {
+    margin-bottom: 25px;
+    list-style: none;
+}
+
+.product ul li {
+    padding: 5px 0;
+}
+
+.btn {
+    padding: 12px 25px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e05d00;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo-container {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    #nav-bar {
+        width: 100%;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 100px 20px;
+    }
+    
+    .feature {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    #pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .product {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #nav-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-link {
+        margin-bottom: 10px;
+    }
+    
+    footer ul {
+        flex-direction: column;
+    }
+    
+    footer ul li {
+        margin-bottom: 10px;
+    }
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Personal Portfolio -->
+        <div class="project-card">
+    <div class="project-header">
+        <h2>Personal Portfolio</h2>
+        <a href="PersonelPortfolioWebpage/index.html" class="btn">View Full Project</a>
+    </div>
+    <div class="project-content">
+        <div class="preview">
+            <h3>Preview</h3>
+            <iframe src="PersonelPortfolioWebpage/index.html" class="preview-iframe"></iframe>
+        </div>
+        <div class="code">
+            <h3>Code</h3>
+            <div class="code-tabs">
+                <div class="code-tab active" onclick="showCode('portfolio-html')">HTML</div>
+                <div class="code-tab" onclick="showCode('portfolio-css')">CSS</div>
+            </div>
+            <div class="code-content">
+                <pre id="portfolio-html" class="code-block"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Himanshu Saxena | Portfolio&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav id="navbar"&gt;
+        &lt;div class="container"&gt;
+            &lt;a href="#welcome-section"&gt;Home&lt;/a&gt;
+            &lt;a href="#projects"&gt;Projects&lt;/a&gt;
+            &lt;a href="#skills"&gt;Skills&lt;/a&gt;
+            &lt;a href="#experience"&gt;Experience&lt;/a&gt;
+            &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;section id="welcome-section"&gt;
+        &lt;div class="welcome-content"&gt;
+            &lt;h1&gt;Hi, I'm Himanshu Saxena&lt;/h1&gt;
+            &lt;p class="subtitle"&gt;Full Stack Developer &amp; Problem Solver&lt;/p&gt;
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://github.com/alan-w-arch" target="_blank"&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;a href="https://www.linkedin.com/in/Himanshu--Saxena/" target="_blank"&gt;&lt;i class="fab fa-linkedin"&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;a href="mailto:himanshusaxena71333@gmail.com"&gt;&lt;i class="fas fa-envelope"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id="projects"&gt;
+        &lt;h2&gt;My Projects&lt;/h2&gt;
+        &lt;div class="projects-grid"&gt;
+            &lt;div class="project-tile"&gt;
+                &lt;h3&gt;BrainBots Website&lt;/h3&gt;
+                &lt;p&gt;Responsive EdTech website with SEO optimization and modern UI/UX&lt;/p&gt;
+                &lt;a href="https://github.com/alan-w-arch/BrainBots" target="_blank" class="project-link"&gt;View Project&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="project-tile"&gt;
+                &lt;h3&gt;Gaming Preferences Analysis&lt;/h3&gt;
+                &lt;p&gt;Data analysis project exploring gaming trends and user preferences&lt;/p&gt;
+                &lt;a href="https://github.com/alan-w-arch/Analysis-on-Gaming-Preferences" target="_blank" class="project-link"&gt;View Project&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id="skills"&gt;
+        &lt;h2&gt;Technical Skills&lt;/h2&gt;
+        &lt;div class="skills-container"&gt;
+            &lt;div class="skill-category"&gt;
+                &lt;h3&gt;Languages&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;C++&lt;/li&gt;
+                    &lt;li&gt;Python&lt;/li&gt;
+                    &lt;li&gt;C&lt;/li&gt;
+                    &lt;li&gt;R&lt;/li&gt;
+                    &lt;li&gt;JavaScript&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="skill-category"&gt;
+                &lt;h3&gt;Frameworks&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;React&lt;/li&gt;
+                    &lt;li&gt;Node.js&lt;/li&gt;
+                    &lt;li&gt;Express.js&lt;/li&gt;
+                    &lt;li&gt;HTML5&lt;/li&gt;
+                    &lt;li&gt;CSS3&lt;/li&gt;
+                    &lt;li&gt;Tailwind CSS&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="skill-category"&gt;
+                &lt;h3&gt;Tools/Platforms&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;MongoDB&lt;/li&gt;
+                    &lt;li&gt;MS SQL Server&lt;/li&gt;
+                    &lt;li&gt;Git&lt;/li&gt;
+                    &lt;li&gt;Netlify&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id="experience"&gt;
+        &lt;h2&gt;Work Experience&lt;/h2&gt;
+        &lt;div class="experience-item"&gt;
+            &lt;h3&gt;Freelance Web Developer&lt;/h3&gt;
+            &lt;p class="company"&gt;BrainBots (EdTech Company)&lt;/p&gt;
+            &lt;p class="duration"&gt;Dec 2024&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Engineered a fully responsive website utilizing HTML, Tailwind CSS, and JavaScript&lt;/li&gt;
+                &lt;li&gt;Optimized SEO and page load speed, slashing bounce rate by 30%&lt;/li&gt;
+                &lt;li&gt;Enhanced mobile responsiveness and cross-browser compatibility, boosting user engagement by 25%&lt;/li&gt;
+                &lt;li&gt;Applied modern UI/UX strategies to streamline user navigation and elevate brand presence&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id="contact"&gt;
+        &lt;h2&gt;Get In Touch&lt;/h2&gt;
+        &lt;div class="contact-info"&gt;
+            &lt;p&gt;&lt;i class="fas fa-envelope"&gt;&lt;/i&gt; himanshusaxena71333@gmail.com&lt;/p&gt;
+            &lt;p&gt;&lt;i class="fas fa-phone"&gt;&lt;/i&gt; +91 98157 59234&lt;/p&gt;
+            &lt;a id="profile-link" href="https://github.com/alan-w-arch" target="_blank"&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt; GitHub Profile&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2024 Himanshu Saxena. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <pre id="portfolio-css" class="code-block" style="display: none;"><code class="css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: var(--primary-color);
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.welcome-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-content .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--light-color);
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: var(--light-color);
+}
+
+section {
+    padding: 6rem 2rem;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+#projects {
+    background-color: var(--light-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-tile {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s;
+}
+
+.project-tile:hover {
+    transform: translateY(-10px);
+}
+
+.project-tile h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: var(--secondary-color);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.skill-category ul {
+    list-style-position: inside;
+}
+
+.skill-category li {
+    margin-bottom: 0.5rem;
+}
+
+.experience-item {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.company {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.duration {
+    color: #777;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.experience-item ul {
+    margin-left: 2rem;
+}
+
+.experience-item li {
+    margin-bottom: 0.5rem;
+}
+
+#contact {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info p, .contact-info a {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info i {
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+
+#profile-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#profile-link:hover {
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--dark-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    #navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar a {
+        padding: 0.5rem;
+    }
+
+    .welcome-content h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-content .subtitle {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 4rem 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Responsive Web Design Projects. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Initialize syntax highlighting
+        hljs.highlightAll();
+        
+        // Function to switch between code tabs
+        function showCode(id) {
+            // Hide all code blocks in this project
+            const codeBlocks = document.querySelectorAll('.code-block');
+            codeBlocks.forEach(block => {
+                block.style.display = 'none';
+            });
+            
+            // Show the selected code block
+            document.getElementById(id).style.display = 'block';
+            
+            // Update active tab
+            const tabs = document.querySelectorAll('.code-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Re-highlight the code
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        }
+    </script>
+</body>
+</html>
